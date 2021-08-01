@@ -19,8 +19,8 @@ jobs:
           command: |
             aws cloudformation deploy \
               --template-file bucket.yml \
-              --stack-name "${CIRCLE_WORKFLOW_ID:0:7}" \
-              --parameter-overrides PipelineID="${CIRCLE_WORKFLOW_ID:0:7}"
+              --stack-name "A${CIRCLE_WORKFLOW_ID:0:7}" \
+              --parameter-overrides PipelineID="A${CIRCLE_WORKFLOW_ID:0:7}"
       - destroy_environment
   get_last_deployment_id:
     docker:
@@ -44,7 +44,7 @@ jobs:
             aws cloudformation deploy \
             --template-file cloudfront.yml \
             --stack-name production-distro \
-            --parameter-overrides PipelineID="${CIRCLE_WORKFLOW_ID}"
+            --parameter-overrides PipelineID="A${CIRCLE_WORKFLOW_ID}"
   clean_up_old_front_end:
     docker:
       - image: amazon/aws-cli

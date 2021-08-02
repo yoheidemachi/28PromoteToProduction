@@ -1,10 +1,8 @@
-NAME:
-  Type: String
 Resources:
   WebsiteBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Sub "${NAME}"
+      BucketName: udacity-cloud-devops-28-124466947557
       AccessControl: PublicRead
       WebsiteConfiguration:
         IndexDocument: index.html

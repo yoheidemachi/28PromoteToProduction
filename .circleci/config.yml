@@ -54,7 +54,7 @@ jobs:
           name: Clean up
           command: |
             aws s3 rm "s3://${OldPipelineID}" --recursive
-            aws cloudformation delete-stack --stack-name "${PreviousPipelineID}"
+            aws cloudformation delete-stack --stack-name "front-${PreviousPipelineID}"
 
 workflows:
   my_workflow:

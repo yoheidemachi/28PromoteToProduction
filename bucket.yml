@@ -2,7 +2,7 @@ Resources:
   WebsiteBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: udacity-cloud-devops-28-124466947557
+      BucketName: udacity-cloud-devops-28-124466947557-01
       AccessControl: PublicRead
       WebsiteConfiguration:
         IndexDocument: index.html
